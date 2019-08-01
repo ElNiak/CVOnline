@@ -1,0 +1,343 @@
+/* Global */
+
+* {
+
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+section .heading {
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 5px;
+}
+
+hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+
+/* Nav */
+
+.navbar {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /*font-weight: bold;*/
+    background: rgba(216,44,46,0.8);
+    border-bottom: 1px solid white;
+}
+
+.navbar .navbar-nav {
+    /*display: inline-block;*/
+    float: none;
+    vertical-align: top;
+    margin: 0 auto;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+
+.navbar li a {
+    padding: 10px 10px;
+}
+
+.navbar li a:hover, .navbar li.active a  {
+    color: #c22317 !important;
+    background-color: white !important;
+}
+
+.navlink.active, .navlink.focus {
+    color: #c22317 !important;
+    background-color: white !important;
+    border-bottom: 2px solid white;
+}
+
+.navbar-toggler {
+    border-style: none;
+}
+
+
+/* Aboutme */
+
+#aboutme {
+    padding-top: 100px;
+    background: #c22317;
+}
+
+.rounded-circle{
+    border: 2px solid white;
+}
+
+.profile-pict {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.red {
+    color: #c22317;
+}
+
+.button1 {
+    border: 2px solid white;
+    border-radius: 5%;
+    padding: 10px;
+    color: white;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.button2 {
+    border: 2px solid #c22317;
+    border-radius: 5%;
+    padding: 10px;
+    color: #c22317;
+    background: white;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.button1:hover {
+    background: white;
+    color: #c22317;
+    text-decoration: none;
+}
+
+.button2:hover {
+    background: #c22317;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* Competency */
+
+#skills {
+    margin-bottom: 20px;
+}
+
+
+.card {
+    text-align: center;
+}
+
+
+/* Career */
+
+#career {
+    background: #c22317;
+}
+
+
+
+.timeline {
+    padding: 30px 10px;
+    position: relative;
+}
+
+/* middle line, before element */
+.timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 5px;
+    background: #333;
+    left: 50%;
+    margin-left: -2.5px;
+}
+
+/* > = direct parent */
+.timeline > li{
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* after element */
+.timeline > li:after{
+    clear: both;
+}
+
+.timeline > li:before, .timeline > li:after{
+    content: " ";
+    display: table;
+}
+
+.time-badge {
+    color: #c22317;
+    width: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    top:16px;
+    left: 50%;
+    margin-left: -25px; /* 50 div 2 */
+    background-color: #ddd;
+    border-radius: 50%;
+}
+
+.timeline-panel-container {
+    width: 50%;
+    float: left;
+}
+
+.timeline-panel-container-inverted {
+    width: 50%;
+    float: right;
+}
+
+.timeline-panel {
+    width: 90%;
+    float: right;
+    margin-right: 40px;
+    border: 1px solid #d4d4d4;
+    border-radius: 7px;
+    padding: 20px 25px;
+    position: relative;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    background: #fff;
+}
+
+.timeline-panel-container-inverted .timeline-panel {
+    width: 90%;
+    float: left;
+    margin-left: 40px;
+    border: 1px solid #d4d4d4;
+    border-radius: 7px;
+    padding: 20px 25px;
+    position: relative;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    background: #fff;
+}
+
+.timeline-panel:after {
+    position: absolute;
+    top: 27px;
+    right: -14px;
+    display: inline-block;
+    border-top: 14px solid transparent; 
+    border-left: 14px solid #fff;
+    border-right: 0 solid #fff; 
+    border-bottom: 14px solid transparent;
+    content: " ";
+
+}
+
+.timeline-panel-container-inverted .timeline-panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+}
+
+.timeline-heading h3 {
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.timeline-heading h4 {
+    color: #c22317;
+    font-size: 19px;
+}
+
+#moreme {
+    background: #c22317;
+}
+
+#contactme {
+}
+
+footer {
+    padding: 20px 0 40px;
+}
+
+footer .fa {
+    font-size: 25px;
+    margin: 20px;
+    color: #c22317;
+    height: 38px;
+}
+
+footer .fa:hover {
+    font-size: 28px;
+}
+
+
+.git{
+    font-size: 22px;    
+}
+
+.git:hover {
+    font-size: 28px;
+}
+
+.link {
+    color: gray;
+}
+
+.link:hover {
+    color: gray;
+}
+
+/*.wrapper {
+position: relative;
+overflow: hidden;
+}
+
+.wrapper:after {
+content: ' ';
+display: block;
+padding-top: 100%;
+}
+
+.wrapper img {
+width: auto;
+height: 100%;
+max-width: none;
+position: absolute;
+left: 50%;
+top: 0;
+transform: translateX(-50%);
+}*/
+
+.card-img-top {
+    width: 100%;
+    height: 30vh !important;
+    object-fit: cover;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+.shadow {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+}
+
+
+
+
