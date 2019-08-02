@@ -13,6 +13,8 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
         <!-- Local import : -->
         <link href="css/style.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+
         
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -417,6 +419,23 @@
                                     <p class="card-text">Design and implement a prototype which allows you to play around with the configuration of such a home automation system. The prototype should allow you to dene what your house looks like (how is the house structured, how many rooms, how are they connected, where are the doors and windows) what kind of automated devices it has (window blinds, door locks, central heating, air conditioning, lights, sprinklers, audio-video material) and how they can react (turned on or off, increase or decrease) to external conditions (temperature, presence and activities of habitants, time of day)</p>
                                     <p class="card-text"><small class="text-muted">Java/Design Pattern/Framework/Reflexion/Maintainability</small></p>
                                     <a  href="https://github.com/ElNiak/LINGI2252---Groupe-E.git"   target="_blank" class="btn btn-social-icon btn-github">
+                                        <span class="fa fa-github git"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                     <div class="col-sm-6">
+                        <div class="card bigger" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse7">
+                            <img  style="object-fit: contain;" class="card-img-top" src="images/cv.jpg" alt="Card image cap">
+                            <br>
+                            <h5 class="card-title">My Curriculum vitae<br> <small class="text-muted">2019</small></h5>
+                            <div id="collapse8" class="collapse" aria-labelledby="headingOne">
+                                <div class="card-body">
+                                    <p class="card-text">This project was very good to learn new stuff and moreover very usefull since I made my "netCV". It use some good theory for web development including front-end and back-end.</p>
+                                    <p class="card-text"><small class="text-muted">PHP/Bootstrap/CSS/HTML/JS</small></p>
+                                    <a  href="https://github.com/ElNiak/CVOnline.git"   target="_blank" class="btn btn-social-icon btn-github">
                                         <span class="fa fa-github git"></span>
                                     </a>
                                 </div>
