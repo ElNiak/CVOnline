@@ -1,4 +1,5 @@
-<?php include("php/contactme.php"); ?>
+<?php include "php/contactme.php"; ?>
+
 <!DOCTYPE html> 
 <html lang="en">
     <head>
@@ -13,8 +14,9 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
         <!-- Local import : -->
         <link href="css/style.css" rel="stylesheet">
-        
-        
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -84,9 +86,15 @@
                             </div>
                         </div>
                         <br>
-                         <div class="progress">
+                        <div class="progress">
                             <div class="progress-bar bg-success" role="progressbar" style="width: 60%">
                                 <p class="justify-content-center d-flex position-absolute w-100">JS</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 80%">
+                                <p class="justify-content-center d-flex position-absolute w-100">Git</p>
                             </div>
                         </div>
                         <br>
@@ -111,7 +119,7 @@
                         </div>
                         <br>
                         <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 40%">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 55%">
                                 <p class="justify-content-center d-flex position-absolute w-100" style="color: black">BootStrap v3-4</p>
                             </div>
                         </div>
@@ -119,6 +127,12 @@
                         <div class="progress">
                             <div class="progress-bar bg-success" role="progressbar" style="width: 60%">
                                 <p class="justify-content-center d-flex position-absolute w-100">PHP</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 55%">
+                                <p class="justify-content-center d-flex position-absolute w-100" style="color: black">"WordPress"</p>
                             </div>
                         </div>
                     </div>
@@ -424,6 +438,23 @@
                         </div>
                         <br>
                     </div>
+                    <div class="col-sm-6">
+                        <div class="card bigger" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse7">
+                            <img  style="object-fit: contain;" class="card-img-top" src="images/cv.jpg" alt="Card image cap">
+                            <br>
+                            <h5 class="card-title">My Curriculum vitae<br> <small class="text-muted">2019</small></h5>
+                            <div id="collapse8" class="collapse" aria-labelledby="headingOne">
+                                <div class="card-body">
+                                    <p class="card-text">This project was very good to learn new stuff and moreover very usefull since I made my "netCV". It use some good theory for web development including front-end and back-end.</p>
+                                    <p class="card-text"><small class="text-muted">PHP/Bootstrap/CSS/HTML/JS</small></p>
+                                    <a  href="https://github.com/ElNiak/CVOnline.git"   target="_blank" class="btn btn-social-icon btn-github">
+                                        <span class="fa fa-github git"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
                     <h2 style="margin: 0 auto;">...</h2>
                 </div>
             </div>
@@ -523,28 +554,25 @@
                     </div>
                 </form>
                 <?php 
-                    if($_SERVER['REQUEST_METHOD'] == "POST"  and validation()){
-                        echo "<div  style='text-align: center;'>
+                /*//All ok 
+                if($_SERVER['REQUEST_METHOD'] == "POST" and validation()){
+                    echo "<div  style='text-align: center;'>
                 <small id='sent' class='text-muted' style='font-weight:bold;'><br>Your message has been sent correctly, thanks ! </small>
                 </div>";
-                        echo "<script>  $('html, body').animate({ scrollTop: $(document).height()-$(window).height() },700); </script>";
-                        
-                        send_mail();
-                    }
-                    else if($_SERVER['REQUEST_METHOD'] == "POST" and ((strlen($name) < 3 or  strlen($name) > 25) or strlen($comment) < 3)) {
-                        echo "<div  style='text-align: center;'>
+                    send_mail();
+                }
+                //Too short name
+                else if($_SERVER['REQUEST_METHOD'] == "POST" and ((strlen($name) < 3 or  strlen($name) > 25) or strlen($comment) < 3)) {
+                    echo "<div  style='text-align: center;'>
                 <small id='sent' class='text-muted' style='font-weight:bold;'><br>Enter a valid name and message </small>
                 </div>";
-                        echo "
-                        <script>  $('html, body').animate({ scrollTop: $(document).height()-$(window).height() },700); </script>";
-                    }
-                    else if($_SERVER['REQUEST_METHOD'] == "POST") {
-                        echo "<div  style='text-align: center;'>
+                }
+                //XSS/attack
+                else if($_SERVER['REQUEST_METHOD'] == "POST") {
+                    echo "<div  style='text-align: center;'>
                 <small id='sent' class='text-muted' style='font-weight:bold;'><br>Don't try it bitches</small>
                 </div>";
-                        echo "
-                        <script>  $('html, body').animate({ scrollTop: $(document).height()-$(window).height() },700); </script>";
-                    }
+                }*/
                 ?>
             </div>
         </section>        

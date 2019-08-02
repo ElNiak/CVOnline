@@ -1,15 +1,26 @@
 <?php 
 
-    $name = $email = $phone = $subject = $comment = "";
+    $value = array("name"=>"",
+                   "email"=>"",
+                   "phone"=>"",
+                   "subject"=>"",
+                   "comment"=>"",
+                  "success"=> false);
+    
+    $to = "christophe.cr.dev@gmail.com";
+    $emailtxt = "";
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si soumission des données
-        $name = sanitize_input($_POST['name']);
-        $email = sanitize_input($_POST['email']);
-        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-        $phone = sanitize_input($_POST['phone']);
-        $subject = sanitize_input($_POST['subject']);
-        $comment = sanitize_input($_POST['comment']);
+        $value["name"] = sanitize_input($_POST['name']);
+        $value["email"] = sanitize_input($_POST['email']);
+        $value["email"] = filter_var($value["email"], FILTER_SANITIZE_EMAIL);
+        $value["phone"] = sanitize_input($_POST['phone']);
+        $value["subject"] = sanitize_input($_POST['subject']);
+        $value["comment"] = sanitize_input($_POST['comment']);
+        $value["success"] = validation();
     }
+
+    echo json_encode($value);
 
     function sanitize_input($var){
         $var = trim($var); //enleve tout caractere speciaux e.g \n \t ...
@@ -24,31 +35,29 @@
     }
 
     function send_mail(){
-        global $name,$email,$phone,$subject,$comment;
         if(validation()){
-            $to = "christophe.cr.dev@gmail.com";
-            $emailtxt = "";
-            $emailtxt .= "Name : $name\n";
-            $emailtxt .= "Subject : $subject\n";
-            $emailtxt .= "Phone : $phone\n";
-            $emailtxt .= "Message : $comment\n";
-            $emailtxt .= "Email : $email\n";
-            $header = "From:$name <$email>\r\nReply-To:$email";
+            global $value,$emailtxt,$to;
+            $emailtxt .= "Name : ".$value["name"]."\n";
+            $emailtxt .= "Subject :". $value["subject"]."\n";
+            $emailtxt .= "Phone : ".$value["phone"]."\n";
+            $emailtxt .= "Message :". $value["comment"]."\n";
+            $emailtxt .= "Email :". $value["email"]."\n";
+            $header = "From:".$value["name"] ." <".$value["email"].">\r\nReply-To:".$value["email"];
             mail($to,"MESSAGE CV",$emailtxt, $header);
-            $name = $email = $phone = $subject = $comment = "";
+            $value["name"] = $value["email"] = $value["phone"] = $value["subject"] = $value["comment"] = $emailtxt = "";
         }
     }
 
     function validation(){
-        return !filter_var($GLOBALS['email'], FILTER_VALIDATE_EMAIL) === false and 
+        global $value;
+        return !filter_var($value["email"] , FILTER_VALIDATE_EMAIL) === false and 
             !isHTML($_POST['name'])and 
             !isHTML($_POST['email'])and 
             !isHTML($_POST['phone'])and 
             !isHTML($_POST['subject'])and
             !isHTML($_POST['comment']) and 
-            strlen($GLOBALS['name']) > 3 and
-            strlen($GLOBALS['name']) < 25 and 
-            strlen($GLOBALS['comment']) > 3 and 
-            strlen($GLOBALS['comment']) < 25;
+            strlen($value["name"]) > 3 and
+            strlen($value["name"]) < 25 and 
+            strlen($value["comment"]) > 3; 
     }
 ?>

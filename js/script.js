@@ -42,5 +42,23 @@ $(document).ready(function() {
     $('body').on('click', function(){
         $('.navbar-collapse').collapse('hide');
     });
+    
+    $('#contact').submit(function(e){
+        e.preventDefault(); //remove default behavior 
+        var postdata = $('#contact').serialize(); //allow to look at data in formulare and put them into the variable.
+        
+        $.ajax({ //for not reloading the page 
+            type: 'POST',
+            url:'php/contactme.php',
+            data:postdata,
+            dataType:'JSON',
+            success: function(resJson){
+                if(resJson.success){
+                    $('#contact').append("<div  style='text-align: center;'> <small id='sent' class='text-muted' style='font-weight:bold;'><br>Your message has been sent correctly, thanks ! </small> </div>")
+                }
+            }
+        });
+        
+    });
 });
 
